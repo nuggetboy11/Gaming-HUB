@@ -1,54 +1,43 @@
 
-const address = document.getElementById("address");
+const searchForm = document.getElementById("searchForm");
+const search = document.getElementById("search");
+const urlForm = document.getElementById("urlForm");
+const urlInput = document.getElementById("url");
 const message = document.getElementById("message");
-const viewer = document.getElementById("viewer");
 
-const destinations = {
-  roblox: "https://www.roblox.com/",
-  nowgg: "https://now.gg/",
-  whatsup: "https://whatsup.ai/"
-};
+searchForm.addEventListener("submit", event => {
+  event.preventDefault();
 
-document.querySelectorAll("[data-site]").forEach(button => {
-  button.addEventListener("click", () => {
-    const site = button.dataset.site;
-    address.value = destinations[site];
-    message.textContent =
-      "Selected " + site + ". A compatible, authorized proxy backend is required to load it here.";
-  });
+  const query = search.value.trim();
+  if (!query) return;
+
+  const searchUrl = new URL("https://www.google.com/search");
+  searchUrl.searchParams.set("q", query);
+
+  window.open(searchUrl.href, "_blank", "noopener,noreferrer");
 });
 
-document.getElementById("go").addEventListener("click", () => {
-  let url;
+urlForm.addEventListener("submit", event => {
+  event.preventDefault();
+
+  let address = urlInput.value.trim();
+  if (!address) return;
+
+  if (!/^https?:\/\//i.test(address)) {
+    address = "https://" + address;
+  }
 
   try {
-    url = new URL(address.value);
+    const parsed = new URL(address);
+
+    if (!["https:", "http:"].includes(parsed.protocol)) {
+      throw new Error("Invalid protocol");
+    }
+
+    window.open(parsed.href, "_blank", "noopener,noreferrer");
+    message.textContent =
+      "Opened the destination in a new tab. This is direct browsing, not proxying.";
   } catch {
-    message.textContent = "Enter a valid HTTPS address.";
-    return;
+    message.textContent = "Please enter a valid website address.";
   }
-
-  if (url.protocol !== "https:") {
-    message.textContent = "Only HTTPS destinations are supported.";
-    return;
-  }
-
-  message.textContent =
-    "Destination selected: " + url.hostname +
-    ". This starter does not relay website traffic yet.";
-});
-
-document.getElementById("home").addEventListener("click", () => {
-  address.value = "";
-  message.textContent = "Choose a destination to get started.";
-});
-
-document.getElementById("back").addEventListener("click", () => {
-  message.textContent =
-    "Navigation history requires an active browsing backend.";
-});
-
-document.getElementById("refresh").addEventListener("click", () => {
-  message.textContent =
-    "Refresh is available after a compatible browsing backend is connected.";
 });
