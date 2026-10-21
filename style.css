@@ -1,0 +1,250 @@
+
+:root {
+  font-family: Inter, Arial, sans-serif;
+  color: #f5f7ff;
+  background: #090d18;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 15% 10%, #172956 0, transparent 38%),
+    radial-gradient(ellipse at 90% 35%, #291744 0, transparent 35%),
+    #090d18;
+}
+
+.navbar {
+  height: 72px;
+  padding: 0 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #202a40;
+  background: #090d18cc;
+}
+
+.logo {
+  color: white;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+
+.status, .count {
+  color: #78f5c5;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+main {
+  width: min(1100px, 88%);
+  margin: auto;
+}
+
+.hero {
+  text-align: center;
+  padding: 85px 0 60px;
+}
+
+.eyebrow {
+  color: #70d9ff;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+h1 {
+  margin: 18px 0;
+  font-size: clamp(34px, 6vw, 64px);
+  line-height: 1.08;
+  font-weight: 950;
+  letter-spacing: -2px;
+}
+
+h1 span {
+  color: #77b8ff;
+  background: linear-gradient(90deg, #77b8ff, #c4a1ff);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  color: #a6b0c8;
+  margin-bottom: 30px;
+}
+
+#search {
+  width: min(480px, 100%);
+  padding: 16px 20px;
+  border: 1px solid #303e5c;
+  border-radius: 12px;
+  background: #11192a;
+  color: white;
+  font-size: 15px;
+  outline: none;
+}
+
+#search:focus {
+  border-color: #77b8ff;
+  box-shadow: 0 0 0 3px #77b8ff20;
+}
+
+.section {
+  padding-bottom: 45px;
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+h2 {
+  margin: 6px 0;
+  font-size: 27px;
+}
+
+.games {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.game-card {
+  overflow: hidden;
+  background: #111827;
+  border: 1px solid #26344c;
+  border-radius: 18px;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.game-card:hover {
+  transform: translateY(-5px);
+  border-color: #77b8ff;
+}
+
+.game-art {
+  height: 145px;
+  display: grid;
+  place-items: center;
+  font-size: 66px;
+  font-weight: 950;
+  text-shadow: 0 0 28px #ffffff55;
+}
+
+.roblox .game-art {
+  background: linear-gradient(135deg, #4d2638, #ef515b);
+}
+
+.nowgg .game-art {
+  background: linear-gradient(135deg, #143c63, #398df3);
+}
+
+.whatsup .game-art {
+  background: linear-gradient(135deg, #342254, #a45bff);
+}
+
+.game-info {
+  padding: 22px;
+}
+
+.tag {
+  color: #82d9ff;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  font-weight: 800;
+}
+
+h3 {
+  margin: 12px 0 8px;
+  font-size: 21px;
+}
+
+.game-info p, .note p {
+  color: #a6b0c8;
+  font-size: 13px;
+  line-height: 1.7;
+  min-height: 44px;
+}
+
+.launch {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+  padding: 13px 10px;
+  border-radius: 10px;
+  background: #eaf2ff;
+  color: #111827;
+  font-weight: 800;
+  font-size: 13px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.launch:hover {
+  background: #9cdcff;
+}
+
+.note {
+  display: flex;
+  gap: 16px;
+  padding: 22px;
+  margin-bottom: 55px;
+  border: 1px solid #29354d;
+  border-radius: 15px;
+  background: #111827aa;
+}
+
+.note > span {
+  font-size: 26px;
+}
+
+.note h3 {
+  margin-top: 2px;
+}
+
+.note p {
+  min-height: 0;
+  margin-bottom: 0;
+}
+
+footer {
+  padding: 25px;
+  text-align: center;
+  color: #75819a;
+  border-top: 1px solid #202a40;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+footer span {
+  color: #77b8ff;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+@media (max-width: 760px) {
+  .games {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding: 60px 0 45px;
+  }
+
+  .game-art {
+    height: 120px;
+  }
+
+  .navbar {
+    padding: 0 6%;
+  }
+}
