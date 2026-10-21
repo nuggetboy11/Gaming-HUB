@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090d18">
+  <title>Rocket Bay Gaming</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <a class="logo" href="#">🚀 ROCKET BAY</a>
+    <span class="status">● GAME ZONE</span>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow">YOUR NEXT ADVENTURE STARTS HERE</p>
+      <h1>PLAY <span>WITHOUT LIMITS.</span></h1>
+      <p class="subtitle">
+        Your gaming hub. Your favorite worlds. One place.
+      </p>
+
+      <input
+        id="search"
+        type="search"
+        placeholder="Search games and websites..."
+        aria-label="Search games"
+      >
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">YOUR DESTINATIONS</p>
+          <h2>Game Launcher</h2>
+        </div>
+        <span class="count">03 SITES</span>
+      </div>
+
+      <div class="games">
+        <article class="game-card roblox"
+          data-search="roblox games multiplayer">
+          <div class="game-art">R</div>
+          <div class="game-info">
+            <span class="tag">GAMING</span>
+            <h3>Roblox</h3>
+            <p>Discover millions of player-created experiences.</p>
+            <a class="launch"
+              href="https://www.roblox.com/"
+              target="_blank" rel="noopener noreferrer">
+              Open Roblox ↗
+            </a>
+          </div>
+        </article>
+
+        <article class="game-card nowgg"
+          data-search="now gg cloud gaming">
+          <div class="game-art">▶</div>
+          <div class="game-info">
+            <span class="tag">CLOUD GAMING</span>
+            <h3>now.gg</h3>
+            <p>Visit the cloud gaming platform.</p>
+            <a class="launch"
+              href="https://now.gg/"
+              target="_blank" rel="noopener noreferrer">
+              Visit now.gg ↗
+            </a>
+          </div>
+        </article>
+
+        <article class="game-card whatsup"
+          data-search="whatsup ai whats up artificial intelligence">
+          <div class="game-art">✦</div>
+          <div class="game-info">
+            <span class="tag">AI ZONE</span>
+            <h3>WhatsUp.ai</h3>
+            <p>Open the AI website in a new tab.</p>
+            <a class="launch"
+              href="https://whatsup.ai/"
+              target="_blank" rel="noopener noreferrer">
+              Visit WhatsUp.ai ↗
+            </a>
+          </div>
+        </article>
+      </div>
+
+      <p id="empty" hidden>No matching sites found.</p>
+    </section>
+
+    <section class="note">
+      <span>⚡</span>
+      <div>
+        <h3>Ready, player one?</h3>
+        <p>
+          Choose a destination above. Some websites may require
+          an account or may not work inside embedded frames.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    ROCKET BAY GAMING <span>•</span> UNOFFICIAL GAME PORTAL
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
