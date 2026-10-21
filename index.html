@@ -8,14 +8,16 @@
 
 <style>
 :root {
-  --bg: #0c0d15;
+  --bg: #0b0c14;
   --panel: #171927;
   --purple: #8957ff;
   --text: #f5f5ff;
-  --muted: #a5a9bd;
+  --muted: #a6abc0;
 }
 
 * { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
@@ -25,14 +27,11 @@ body {
 }
 
 header {
-  position: sticky;
-  top: 0;
-  z-index: 5;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 18px;
   padding: 18px 5%;
   background: #151624;
   border-bottom: 1px solid #303249;
@@ -47,56 +46,56 @@ header {
 
 nav {
   display: flex;
-  gap: 18px;
   flex-wrap: wrap;
+  gap: 18px;
 }
 
 nav a {
-  color: #dedff0;
+  color: #dddff0;
   text-decoration: none;
   font-size: 14px;
 }
 
-nav a:hover { color: #bca6ff; }
+nav a:hover { color: #c4aeff; }
 
 main {
-  width: min(1200px, 94%);
+  width: min(1150px, 92%);
   margin: auto;
   padding: 28px 0 60px;
 }
 
 .hero {
-  padding: 35px;
-  border: 1px solid #39304f;
-  border-radius: 20px;
+  padding: clamp(24px, 5vw, 48px);
+  border: 1px solid #443463;
+  border-radius: 22px;
   background:
-    radial-gradient(ellipse at 90% 10%, #653bb555, transparent 45%),
-    linear-gradient(130deg, #202337, #171522);
+    radial-gradient(ellipse at 85% 10%, #7348c955, transparent 42%),
+    linear-gradient(135deg, #22253b, #171522);
 }
 
 .tag {
-  color: #c5afff;
+  color: #c4afff;
   font-size: 12px;
   font-weight: bold;
   letter-spacing: 2px;
 }
 
 h1 {
-  font-size: clamp(32px, 5vw, 52px);
-  margin: 14px 0;
+  font-size: clamp(34px, 6vw, 55px);
+  margin: 15px 0;
 }
 
 .hero p {
-  max-width: 620px;
+  max-width: 600px;
   color: var(--muted);
   line-height: 1.7;
 }
 
 .button {
   display: inline-block;
-  padding: 12px 18px;
   border: 0;
-  border-radius: 9px;
+  border-radius: 10px;
+  padding: 12px 17px;
   background: var(--purple);
   color: white;
   font-weight: bold;
@@ -104,20 +103,21 @@ h1 {
   cursor: pointer;
 }
 
-.section { margin-top: 30px; }
+.button:hover { background: #a07aff; }
 
 .panel {
+  margin-top: 28px;
+  padding: 24px;
   background: var(--panel);
-  border: 1px solid #2c3043;
-  border-radius: 16px;
-  padding: 22px;
+  border: 1px solid #2e3146;
+  border-radius: 17px;
 }
 
 h2 { margin-top: 0; }
 
 .muted {
   color: var(--muted);
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
 .address-bar {
@@ -127,99 +127,73 @@ h2 { margin-top: 0; }
 }
 
 input {
-  min-width: 0;
   flex: 1;
+  min-width: 0;
   padding: 13px;
   border: 1px solid #3b3e55;
   border-radius: 9px;
-  background: #0e101a;
+  background: #0d0f19;
   color: white;
   font-size: 15px;
-}
-
-input:focus {
-  outline: 2px solid var(--purple);
-}
-
-.viewer {
-  margin-top: 18px;
-  border: 2px solid #5d458c;
-  border-radius: 13px;
-  overflow: hidden;
-  background: white;
-}
-
-.viewer-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 10px;
-  flex-wrap: wrap;
-  background: #202234;
-  padding: 12px 15px;
-}
-
-.viewer-top strong { font-size: 14px; }
-
-iframe {
-  display: block;
-  width: 100%;
-  height: min(72vh, 760px);
-  min-height: 400px;
-  border: 0;
-  background: white;
 }
 
 .quick-links {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
-  margin-top: 15px;
+  margin-top: 17px;
 }
 
 .quick-links a {
-  display: inline-block;
-  background: #292b40;
-  color: #e8e1ff;
   padding: 11px 14px;
   border-radius: 9px;
+  background: #292b40;
+  color: #e5ddff;
   text-decoration: none;
 }
 
 .quick-links a:hover { background: #403060; }
 
+.status {
+  padding: 14px;
+  background: #202234;
+  border-radius: 10px;
+  margin: 18px 0 0;
+}
+
 footer {
-  padding: 30px 15px;
+  padding: 30px;
   border-top: 1px solid #2d3041;
   text-align: center;
   color: var(--muted);
   font-size: 13px;
 }
 
+/* INTRO */
 .overlay {
   position: fixed;
   inset: 0;
-  z-index: 20;
+  z-index: 100;
   display: grid;
   place-items: center;
   padding: 20px;
-  background: #080911ee;
+  background: #070810ed;
 }
 
 .popup {
-  width: min(430px, 100%);
-  padding: 30px;
-  text-align: center;
+  width: min(440px, 100%);
+  padding: 32px 25px;
   border: 1px solid #7654c5;
-  border-radius: 20px;
+  border-radius: 22px;
+  text-align: center;
   background: #191a2a;
-  box-shadow: 0 20px 80px #0008;
+  box-shadow: 0 20px 90px #0009;
 }
 
 .emoji { font-size: 48px; }
 
 .popup h2 {
-  line-height: 1.3;
+  line-height: 1.35;
   margin: 16px 0;
 }
 
@@ -228,39 +202,52 @@ footer {
   line-height: 1.6;
 }
 
-.popup-actions {
+.button-area {
+  position: relative;
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 16px;
-  min-height: 70px;
-  margin-top: 20px;
+  justify-content: center;
+  gap: 24px;
+  min-height: 95px;
+  margin-top: 15px;
 }
 
-.yes, .no {
-  padding: 12px 25px;
+/* The NO button moves using JavaScript coordinates */
+#no {
+  position: relative;
+  background: #34364b;
+  color: white;
   border: 0;
   border-radius: 10px;
+  padding: 13px 26px;
+  font-weight: bold;
+  cursor: pointer;
+  will-change: transform;
+  transition: transform 180ms cubic-bezier(.2,.8,.2,1);
+  touch-action: manipulation;
+}
+
+#yes {
+  padding: 13px 26px;
+  border: 0;
+  border-radius: 10px;
+  background: var(--purple);
   color: white;
   font-weight: bold;
   cursor: pointer;
 }
 
-.yes { background: var(--purple); }
-.no { background: #34364b; }
-
 @media(max-width: 600px) {
-  header { position: static; }
-  .hero { padding: 24px; }
-  .panel { padding: 15px; }
-  iframe { min-height: 350px; }
+  header { padding: 17px 4%; }
+  main { width: 94%; }
+  .panel { padding: 17px; }
+  nav { gap: 12px; }
 }
 </style>
 </head>
 
 <body>
 
-<!-- WELCOME INTRO -->
 <div class="overlay" id="welcome">
   <div class="popup">
     <div class="emoji">👑</div>
@@ -268,157 +255,200 @@ footer {
     <h2>IKERS the coolest boy on earth right?</h2>
     <p>Answer the question to enter the hub!</p>
 
-    <div class="popup-actions">
-      <button class="yes" id="yes">YES 😎</button>
-      <button class="no" id="no">NO 🙄</button>
+    <div class="button-area" id="buttonArea">
+      <button id="yes">YES 😎</button>
+      <button id="no">NO 🙄</button>
     </div>
   </div>
 </div>
 
 <header>
   <div class="logo">IKERS <span>GAMING HUB</span></div>
-
   <nav>
     <a href="#home">Home</a>
     <a href="#viewer">Web Viewer</a>
-    <a href="#links">Quick Links</a>
+    <a href="#games">Games</a>
   </nav>
 </header>
 
 <main id="home">
-
   <section class="hero">
-    <div class="tag">YOUR INTERNET. YOUR HUB.</div>
-    <h1>Welcome to IKERS<br>Gaming Hub 🎮</h1>
+    <div class="tag">WELCOME TO YOUR GAMING WORLD</div>
+    <h1>IKERS GAMING HUB 🎮</h1>
     <p>
-      Your personal place to browse websites, find games,
-      and jump into your favorite online experiences.
+      Your place to discover games, visit your favorite websites,
+      and jump into the action.
     </p>
-    <a class="button" href="#viewer">Open Web Viewer ↓</a>
+    <a href="#games" class="button">Explore Games ↓</a>
   </section>
 
-  <section class="section panel" id="viewer">
-    <h2>🌐 Web Viewer</h2>
+  <section class="panel" id="viewer">
+    <h2>🌐 Website Launcher</h2>
     <p class="muted">
-      Enter an HTTPS website address to try opening it inside
-      the viewer. Some websites block embedded viewing.
+      Enter a website address and open it in a new tab.
+      This avoids the embedded-frame connection error.
     </p>
 
     <form class="address-bar" id="addressForm">
-      <input
-        id="address"
+      <input id="address"
         type="url"
         value="https://sites.google.com/view/staticquasar931"
         placeholder="https://example.com"
         aria-label="Website address"
-        required
-      >
-      <button class="button" type="submit">Go →</button>
+        required>
+      <button class="button" type="submit">Open Website ↗</button>
     </form>
-
-    <div class="viewer">
-      <div class="viewer-top">
-        <strong id="status">IKERS BROWSER WINDOW</strong>
-        <button class="button" id="reload" type="button">Reload</button>
-      </div>
-
-      <iframe
-        id="webFrame"
-        title="Embedded website viewer"
-        src="https://sites.google.com/view/staticquasar931"
-        allow="fullscreen"
-        referrerpolicy="strict-origin-when-cross-origin">
-      </iframe>
-    </div>
-
-    <p class="muted" id="message" aria-live="polite">
-      Trying to load StaticQuasar931. If it stays blank, the website
-      may not allow being displayed inside another site.
-    </p>
 
     <div class="quick-links">
       <a href="https://sites.google.com/view/staticquasar931"
          target="_blank" rel="noopener noreferrer">
-        Open StaticQuasar931 ↗
+        StaticQuasar931 ↗
       </a>
       <a href="https://www.google.com"
          target="_blank" rel="noopener noreferrer">
         Google ↗
       </a>
     </div>
+
+    <p class="muted" id="status" aria-live="polite">
+      Ready to open a website.
+    </p>
   </section>
 
-  <section class="section panel" id="links">
-    <h2>⚡ Quick Links</h2>
+  <section class="panel" id="games">
+    <h2>🎮 Game Zone</h2>
+    <p class="muted">Choose a game to launch it.</p>
+
     <div class="quick-links">
       <a href="https://rocketbotroyale.com/"
-         target="_blank" rel="noopener noreferrer">🤖 Rocket Bot Royale</a>
+         target="_blank" rel="noopener noreferrer">🤖 Rocket Bot Royale ↗</a>
       <a href="https://www.roblox.com/"
-         target="_blank" rel="noopener noreferrer">🎮 Roblox</a>
-      <a href="https://www.crazygames.com/"
-         target="_blank" rel="noopener noreferrer">🕹️ CrazyGames</a>
+         target="_blank" rel="noopener noreferrer">🎮 Roblox ↗</a>
+      <a href="https://www.crazygames.com/game/slope"
+         target="_blank" rel="noopener noreferrer">🔵 Slope ↗</a>
+      <a href="https://www.crazygames.com/game/drift-hunters"
+         target="_blank" rel="noopener noreferrer">🏎️ Drift Hunters ↗</a>
       <a href="https://poki.com/"
-         target="_blank" rel="noopener noreferrer">🎯 Poki</a>
+         target="_blank" rel="noopener noreferrer">🕹️ Poki ↗</a>
     </div>
   </section>
-
 </main>
 
 <footer>
   <strong>IKERS GAMING HUB</strong>
-  <p>Your hub for games and the web.</p>
+  <p>Built for games and the web.</p>
 </footer>
 
 <script>
 const welcome = document.getElementById("welcome");
+const area = document.getElementById("buttonArea");
 const noButton = document.getElementById("no");
+const yesButton = document.getElementById("yes");
 
-document.getElementById("yes").addEventListener("click", () => {
+let noX = 0;
+let noY = 0;
+let animationFrame = null;
+
+function moveNoAway(pointerX, pointerY) {
+  const buttonRect = noButton.getBoundingClientRect();
+
+  const buttonX = buttonRect.left + buttonRect.width / 2;
+  const buttonY = buttonRect.top + buttonRect.height / 2;
+
+  let dx = buttonX - pointerX;
+  let dy = buttonY - pointerY;
+  const distance = Math.hypot(dx, dy) || 1;
+
+  // Move farther when the pointer gets closer.
+  const strength = Math.min(260, 90 + (1800 / distance));
+
+  dx /= distance;
+  dy /= distance;
+
+  let targetX = noX + dx * strength;
+  let targetY = noY + dy * strength;
+
+  // Keep the button within the visible screen.
+  const margin = 12;
+  const areaRect = area.getBoundingClientRect();
+  const baseRect = noButton.getBoundingClientRect();
+
+  const minX = margin - (baseRect.left - noX);
+  const maxX = window.innerWidth - margin -
+               (baseRect.right - noX);
+
+  const minY = margin - (baseRect.top - noY);
+  const maxY = window.innerHeight - margin -
+               (baseRect.bottom - noY);
+
+  targetX = Math.max(minX, Math.min(maxX, targetX));
+  targetY = Math.max(minY, Math.min(maxY, targetY));
+
+  // If the edge prevents moving farther away, try the opposite direction.
+  if (Math.hypot(targetX - noX, targetY - noY) < 35) {
+    targetX = Math.max(minX, Math.min(maxX, noX - dx * 180));
+    targetY = Math.max(minY, Math.min(maxY, noY - dy * 180));
+  }
+
+  noX = targetX;
+  noY = targetY;
+
+  noButton.style.transform =
+    `translate3d(${noX}px, ${noY}px, 0)`;
+}
+
+welcome.addEventListener("pointermove", event => {
+  const rect = noButton.getBoundingClientRect();
+  const cx = rect.left + rect.width / 2;
+  const cy = rect.top + rect.height / 2;
+  const distance = Math.hypot(event.clientX - cx, event.clientY - cy);
+
+  if (distance < 145) {
+    if (animationFrame) cancelAnimationFrame(animationFrame);
+
+    animationFrame = requestAnimationFrame(() => {
+      moveNoAway(event.clientX, event.clientY);
+      animationFrame = null;
+    });
+  }
+});
+
+noButton.addEventListener("pointerdown", event => {
+  if (event.pointerType === "touch") {
+    event.preventDefault();
+    const rect = noButton.getBoundingClientRect();
+    moveNoAway(
+      rect.left + rect.width / 2,
+      rect.top + rect.height / 2
+    );
+  }
+});
+
+yesButton.addEventListener("click", () => {
   welcome.remove();
 });
 
-noButton.addEventListener("pointerenter", () => {
-  const x = Math.random() * 180 - 90;
-  const y = Math.random() * 100 - 50;
-  noButton.style.transform = `translate(${x}px, ${y}px)`;
-});
+document.getElementById("addressForm").addEventListener("submit", event => {
+  event.preventDefault();
 
-const form = document.getElementById("addressForm");
-const address = document.getElementById("address");
-const frame = document.getElementById("webFrame");
-const status = document.getElementById("status");
-const message = document.getElementById("message");
-
-function navigate() {
-  let url;
+  const field = document.getElementById("address");
+  const status = document.getElementById("status");
 
   try {
-    url = new URL(address.value.trim());
+    const url = new URL(field.value.trim());
 
     if (url.protocol !== "https:") {
-      throw new Error("HTTPS websites only");
+      throw new Error("HTTPS required");
     }
+
+    // Open the site directly instead of inside a blocked iframe.
+    const newTab = window.open(url.href, "_blank", "noopener,noreferrer");
+
+    status.textContent = newTab === null
+      ? "Your browser may have blocked the new tab. Allow pop-ups or use the link below."
+      : "Website opened in a new tab.";
   } catch {
-    message.textContent = "Please enter a valid HTTPS website address.";
-    return;
-  }
-
-  frame.src = url.href;
-  status.textContent = url.hostname;
-  message.textContent =
-    "Loading website. If it does not appear, the host may block embedding.";
-}
-
-form.addEventListener("submit", event => {
-  event.preventDefault();
-  navigate();
-});
-
-document.getElementById("reload").addEventListener("click", () => {
-  try {
-    frame.contentWindow.location.reload();
-  } catch {
-    frame.src = frame.src;
+    status.textContent = "Enter a valid HTTPS website address.";
   }
 });
 </script>
