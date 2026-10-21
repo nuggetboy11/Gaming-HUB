@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090b16">
+  <title>IKERS GAMING HUB</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <a class="logo" href="#">🎮 IKERS <span>GAMING HUB</span></a>
+    <span class="online">● GAME ZONE</span>
+  </header>
+
+  <main id="hub" class="locked">
+    <section class="hero">
+      <p class="eyebrow">WELCOME TO YOUR NEXT ADVENTURE</p>
+      <h1>LEVEL UP YOUR <span>GAME.</span></h1>
+      <p>Your games. Your world. Your hub.</p>
+
+      <input id="search" type="search"
+        placeholder="🔎 Search games..."
+        aria-label="Search games">
+    </section>
+
+    <section class="section">
+      <div class="section-title">
+        <div>
+          <p class="eyebrow">PICK YOUR NEXT GAME</p>
+          <h2>🔥 Game Library</h2>
+        </div>
+        <span class="count" id="gameCount">5 GAMES</span>
+      </div>
+
+      <div class="games" id="games">
+        <article class="game-card" data-name="rocket bot royale tank battle">
+          <div class="art rocket-art"><span>🚀</span><small>ROCKET BATTLE</small></div>
+          <div class="card-info">
+            <span class="tag">ACTION</span>
+            <h3>Rocket Bot Royale</h3>
+            <p>Roll into a rocket-powered battle.</p>
+            <a class="play" href="https://rocketbotroyale.com/"
+               target="_blank" rel="noopener noreferrer">PLAY NOW ↗</a>
+          </div>
+        </article>
+
+        <article class="game-card" data-name="slope endless running 3d">
+          <div class="art slope-art"><span>🔴</span><small>SPEED RUN</small></div>
+          <div class="card-info">
+            <span class="tag">ARCADE</span>
+            <h3>Slope</h3>
+            <p>Race down a fast 3D track.</p>
+            <a class="play" href="https://www.crazygames.com/game/slope"
+               target="_blank" rel="noopener noreferrer">PLAY NOW ↗</a>
+          </div>
+        </article>
+
+        <article class="game-card" data-name="subway surfers runner">
+          <div class="art subway-art"><span>🚆</span><small>ENDLESS RUNNER</small></div>
+          <div class="card-info">
+            <span class="tag">RUNNER</span>
+            <h3>Subway Surfers</h3>
+            <p>Dodge obstacles and keep running.</p>
+            <a class="play" href="https://poki.com/en/subway-surfers"
+               target="_blank" rel="noopener noreferrer">PLAY NOW ↗</a>
+          </div>
+        </article>
+
+        <article class="game-card" data-name="drift hunters cars racing">
+          <div class="art drift-art"><span>🏎️</span><small>DRIFT MODE</small></div>
+          <div class="card-info">
+            <span class="tag">RACING</span>
+            <h3>Drift Hunters</h3>
+            <p>Drive and drift around the track.</p>
+            <a class="play" href="https://www.crazygames.com/game/drift-hunters"
+               target="_blank" rel="noopener noreferrer">PLAY NOW ↗</a>
+          </div>
+        </article>
+
+        <article class="game-card" data-name="roblox multiplayer worlds">
+          <div class="art roblox-art"><span>🧱</span><small>BUILD YOUR WORLD</small></div>
+          <div class="card-info">
+            <span class="tag">MULTIPLAYER</span>
+            <h3>Roblox</h3>
+            <p>Explore a huge world of player-made games.</p>
+            <a class="play" href="https://www.roblox.com/"
+               target="_blank" rel="noopener noreferrer">PLAY NOW ↗</a>
+          </div>
+        </article>
+      </div>
+
+      <p id="noResults" hidden>No games found. Try another search!</p>
+    </section>
+
+    <footer>IKERS GAMING HUB · MADE FOR GAMERS 🎮</footer>
+  </main>
+
+  <div id="welcome" class="overlay" role="dialog"
+       aria-modal="true" aria-labelledby="popupTitle">
+    <div class="popup">
+      <div class="crown">👑</div>
+      <p class="eyebrow">ONE VERY IMPORTANT QUESTION</p>
+      <h2 id="popupTitle">IKERS the coolest boy on earth right?</h2>
+      <p class="popup-sub">Choose wisely... your gaming awaits 😎</p>
+      <div class="buttons">
+        <button id="yes" class="yes">YES 😎</button>
+        <button id="no" class="no">NO 😅</button>
+      </div>
+      <p id="popupMessage" aria-live="polite"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
