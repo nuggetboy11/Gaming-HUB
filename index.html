@@ -4,48 +4,52 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Rocket Bay Gaming</title>
-  <link rel="stylesheet" href="/style.css">
+  <title>Rocket Bay Browser</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <a href="/" class="logo">🚀 ROCKET BAY</a>
-    <span class="status">GAMING BROWSER</span>
+    <a class="logo" href="./">🚀 ROCKET BAY</a>
+    <span class="status">BROWSER BETA</span>
   </header>
 
   <main>
     <section class="hero">
-      <p class="eyebrow">YOUR PERSONAL GAME HUB</p>
-      <h1>ROCKET BAY <span>GAMING</span></h1>
-      <p>One hub for your favorite destinations.</p>
+      <p class="eyebrow">YOUR INTERNET. YOUR ZONE.</p>
+      <h1>ROCKET BAY <span>BROWSER</span></h1>
+      <p>Where gaming meets the web.</p>
+
+      <form id="searchForm">
+        <input id="search" placeholder="Search anything on the web..."
+               aria-label="Search the web" required>
+        <button type="submit">SEARCH ↗</button>
+      </form>
     </section>
 
-    <nav class="tabs">
-      <button data-site="roblox">Roblox</button>
-      <button data-site="nowgg">now.gg</button>
-      <button data-site="whatsup">WhatsUp.ai</button>
-    </nav>
-
-    <section class="browser">
-      <div class="toolbar">
-        <button id="home">⌂</button>
-        <button id="back">←</button>
-        <button id="refresh">↻</button>
-        <input id="address" placeholder="Enter an authorized destination">
-        <button id="go">Go ↗</button>
+    <section class="panel">
+      <h2>Quick destinations</h2>
+      <div class="links">
+        <a href="https://www.roblox.com/" target="_blank"
+           rel="noopener noreferrer">🎮 Roblox ↗</a>
+        <a href="https://now.gg/" target="_blank"
+           rel="noopener noreferrer">🕹️ now.gg ↗</a>
+        <a href="https://whatsup.ai/" target="_blank"
+           rel="noopener noreferrer">✦ WhatsUp.ai ↗</a>
       </div>
+    </section>
 
-      <div id="viewer">
-        <div class="welcome">
-          <div class="orb">🚀</div>
-          <h2>Ready to launch?</h2>
-          <p>Choose a destination above to get started.</p>
-          <p id="message" role="status"></p>
-        </div>
-      </div>
+    <section class="panel">
+      <h2>Open a website</h2>
+      <form id="urlForm">
+        <input id="url" placeholder="Enter a website address..."
+               aria-label="Website address" required>
+        <button type="submit">OPEN ↗</button>
+      </form>
+      <p id="message" role="status"></p>
     </section>
   </main>
 
-  <script src="/script.js"></script>
+  <footer>ROCKET BAY GAMING · WEB BROWSER</footer>
+  <script src="script.js"></script>
 </body>
 </html>
