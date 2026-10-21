@@ -3,454 +3,249 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>IKERS GAMING HUB</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rocket Bot Royale Player</title>
 
 <style>
-:root {
-  --bg: #0b0c14;
-  --panel: #171927;
-  --purple: #8957ff;
-  --text: #f5f5ff;
-  --muted: #a6abc0;
+* {
+  box-sizing: border-box;
 }
-
-* { box-sizing: border-box; }
-
-html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
-  background: var(--bg);
-  color: var(--text);
+  background: #090d18;
+  color: white;
   font-family: Arial, sans-serif;
+  min-height: 100vh;
 }
 
 header {
+  height: 76px;
+  padding: 0 5%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 18px;
-  padding: 18px 5%;
-  background: #151624;
-  border-bottom: 1px solid #303249;
+  justify-content: space-between;
+  background: #11182a;
+  border-bottom: 1px solid #293550;
 }
 
 .logo {
-  font-size: 22px;
+  font-size: 21px;
   font-weight: 900;
+  letter-spacing: 1px;
 }
 
-.logo span { color: var(--purple); }
-
-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 18px;
+.logo span {
+  color: #8b7cff;
 }
-
-nav a {
-  color: #dddff0;
-  text-decoration: none;
-  font-size: 14px;
-}
-
-nav a:hover { color: #c4aeff; }
-
-main {
-  width: min(1150px, 92%);
-  margin: auto;
-  padding: 28px 0 60px;
-}
-
-.hero {
-  padding: clamp(24px, 5vw, 48px);
-  border: 1px solid #443463;
-  border-radius: 22px;
-  background:
-    radial-gradient(ellipse at 85% 10%, #7348c955, transparent 42%),
-    linear-gradient(135deg, #22253b, #171522);
-}
-
-.tag {
-  color: #c4afff;
-  font-size: 12px;
-  font-weight: bold;
-  letter-spacing: 2px;
-}
-
-h1 {
-  font-size: clamp(34px, 6vw, 55px);
-  margin: 15px 0;
-}
-
-.hero p {
-  max-width: 600px;
-  color: var(--muted);
-  line-height: 1.7;
-}
-
-.button {
-  display: inline-block;
-  border: 0;
-  border-radius: 10px;
-  padding: 12px 17px;
-  background: var(--purple);
-  color: white;
-  font-weight: bold;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.button:hover { background: #a07aff; }
-
-.panel {
-  margin-top: 28px;
-  padding: 24px;
-  background: var(--panel);
-  border: 1px solid #2e3146;
-  border-radius: 17px;
-}
-
-h2 { margin-top: 0; }
-
-.muted {
-  color: var(--muted);
-  line-height: 1.65;
-}
-
-.address-bar {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-input {
-  flex: 1;
-  min-width: 0;
-  padding: 13px;
-  border: 1px solid #3b3e55;
-  border-radius: 9px;
-  background: #0d0f19;
-  color: white;
-  font-size: 15px;
-}
-
-.quick-links {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-top: 17px;
-}
-
-.quick-links a {
-  padding: 11px 14px;
-  border-radius: 9px;
-  background: #292b40;
-  color: #e5ddff;
-  text-decoration: none;
-}
-
-.quick-links a:hover { background: #403060; }
 
 .status {
-  padding: 14px;
-  background: #202234;
-  border-radius: 10px;
-  margin: 18px 0 0;
-}
-
-footer {
-  padding: 30px;
-  border-top: 1px solid #2d3041;
-  text-align: center;
-  color: var(--muted);
+  color: #aeb9d1;
   font-size: 13px;
 }
 
-/* INTRO */
-.overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 100;
-  display: grid;
-  place-items: center;
-  padding: 20px;
-  background: #070810ed;
+main {
+  max-width: 1250px;
+  margin: 30px auto;
+  padding: 0 20px;
 }
 
-.popup {
-  width: min(440px, 100%);
-  padding: 32px 25px;
-  border: 1px solid #7654c5;
-  border-radius: 22px;
-  text-align: center;
-  background: #191a2a;
-  box-shadow: 0 20px 90px #0009;
-}
-
-.emoji { font-size: 48px; }
-
-.popup h2 {
-  line-height: 1.35;
-  margin: 16px 0;
-}
-
-.popup p {
-  color: var(--muted);
-  line-height: 1.6;
-}
-
-.button-area {
-  position: relative;
+.game-heading {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  gap: 24px;
-  min-height: 95px;
-  margin-top: 15px;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
 }
 
-/* The NO button moves using JavaScript coordinates */
-#no {
+h1 {
+  font-size: clamp(23px, 4vw, 35px);
+  margin: 0 0 8px;
+}
+
+.subtitle {
+  color: #9ca9c4;
+  margin: 0;
+  font-size: 14px;
+}
+
+.buttons {
+  display: flex;
+  gap: 9px;
+  flex-wrap: wrap;
+}
+
+button, .play-link {
+  background: #7664f5;
+  color: white;
+  border: none;
+  border-radius: 9px;
+  padding: 12px 15px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+button:hover, .play-link:hover {
+  background: #9487ff;
+}
+
+.secondary {
+  background: #202b42;
+}
+
+.secondary:hover {
+  background: #30405f;
+}
+
+.player {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  min-height: 300px;
+  max-height: 720px;
+  background: #05070c;
+  border: 1px solid #303c57;
+  border-radius: 14px;
+  overflow: hidden;
   position: relative;
-  background: #34364b;
-  color: white;
-  border: 0;
-  border-radius: 10px;
-  padding: 13px 26px;
-  font-weight: bold;
-  cursor: pointer;
-  will-change: transform;
-  transition: transform 180ms cubic-bezier(.2,.8,.2,1);
-  touch-action: manipulation;
 }
 
-#yes {
-  padding: 13px 26px;
+.player iframe {
+  width: 100%;
+  height: 100%;
   border: 0;
-  border-radius: 10px;
-  background: var(--purple);
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
+  position: absolute;
+  inset: 0;
 }
 
-@media(max-width: 600px) {
-  header { padding: 17px 4%; }
-  main { width: 94%; }
-  .panel { padding: 17px; }
-  nav { gap: 12px; }
+.info {
+  margin-top: 20px;
+  padding: 19px;
+  background: #11182a;
+  border: 1px solid #293550;
+  border-radius: 12px;
+}
+
+.info h2 {
+  font-size: 17px;
+  margin-top: 0;
+}
+
+.info p {
+  color: #aeb9d1;
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+footer {
+  padding: 25px;
+  text-align: center;
+  color: #73809b;
+  font-size: 12px;
+}
+
+.player:fullscreen {
+  width: 100%;
+  height: 100%;
+  max-height: none;
+  aspect-ratio: auto;
+  border: 0;
+  border-radius: 0;
+}
+
+@media (max-width: 600px) {
+  header {
+    padding: 0 16px;
+  }
+
+  .status {
+    display: none;
+  }
+
+  main {
+    margin-top: 20px;
+    padding: 0 12px;
+  }
+
+  .player {
+    aspect-ratio: 4 / 3;
+    min-height: 250px;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<div class="overlay" id="welcome">
-  <div class="popup">
-    <div class="emoji">👑</div>
-    <div class="tag">IKERS GAMING HUB</div>
-    <h2>IKERS the coolest boy on earth right?</h2>
-    <p>Answer the question to enter the hub!</p>
-
-    <div class="button-area" id="buttonArea">
-      <button id="yes">YES 😎</button>
-      <button id="no">NO 🙄</button>
-    </div>
-  </div>
-</div>
-
 <header>
-  <div class="logo">IKERS <span>GAMING HUB</span></div>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#viewer">Web Viewer</a>
-    <a href="#games">Games</a>
-  </nav>
+  <div class="logo">ROCKET BOT <span>ROYALE</span></div>
+  <div class="status">GAME PLAYER</div>
 </header>
 
-<main id="home">
-  <section class="hero">
-    <div class="tag">WELCOME TO YOUR GAMING WORLD</div>
-    <h1>IKERS GAMING HUB 🎮</h1>
+<main>
+  <div class="game-heading">
+    <div>
+      <h1>Rocket Bot Royale</h1>
+      <p class="subtitle">Jump in and play!</p>
+    </div>
+
+    <div class="buttons">
+      <button class="secondary" onclick="reloadGame()">
+        Reload
+      </button>
+
+      <button onclick="fullscreenGame()">
+        ⛶ Fullscreen
+      </button>
+
+      <a class="play-link"
+         href="https://rocketbotroyale.winterpixel.io/"
+         target="_blank"
+         rel="noopener noreferrer">
+        Open Game ↗
+      </a>
+    </div>
+  </div>
+
+  <div class="player" id="player">
+    <iframe
+      id="game"
+      src="https://www.miniplay.com/embed/rocket-bot-royale"
+      title="Rocket Bot Royale game"
+      allow="fullscreen; autoplay"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <section class="info">
+    <h2>🎮 Ready to play?</h2>
     <p>
-      Your place to discover games, visit your favorite websites,
-      and jump into the action.
+      Play Rocket Bot Royale in the game window above.
+      If the game does not load, click Open Game to try
+      the game's website directly.
     </p>
-    <a href="#games" class="button">Explore Games ↓</a>
-  </section>
-
-  <section class="panel" id="viewer">
-    <h2>🌐 Website Launcher</h2>
-    <p class="muted">
-      Enter a website address and open it in a new tab.
-      This avoids the embedded-frame connection error.
-    </p>
-
-    <form class="address-bar" id="addressForm">
-      <input id="address"
-        type="url"
-        value="https://sites.google.com/view/staticquasar931"
-        placeholder="https://example.com"
-        aria-label="Website address"
-        required>
-      <button class="button" type="submit">Open Website ↗</button>
-    </form>
-
-    <div class="quick-links">
-      <a href="https://sites.google.com/view/staticquasar931"
-         target="_blank" rel="noopener noreferrer">
-        StaticQuasar931 ↗
-      </a>
-      <a href="https://www.google.com"
-         target="_blank" rel="noopener noreferrer">
-        Google ↗
-      </a>
-    </div>
-
-    <p class="muted" id="status" aria-live="polite">
-      Ready to open a website.
-    </p>
-  </section>
-
-  <section class="panel" id="games">
-    <h2>🎮 Game Zone</h2>
-    <p class="muted">Choose a game to launch it.</p>
-
-    <div class="quick-links">
-      <a href="https://rocketbotroyale.com/"
-         target="_blank" rel="noopener noreferrer">🤖 Rocket Bot Royale ↗</a>
-      <a href="https://www.roblox.com/"
-         target="_blank" rel="noopener noreferrer">🎮 Roblox ↗</a>
-      <a href="https://www.crazygames.com/game/slope"
-         target="_blank" rel="noopener noreferrer">🔵 Slope ↗</a>
-      <a href="https://www.crazygames.com/game/drift-hunters"
-         target="_blank" rel="noopener noreferrer">🏎️ Drift Hunters ↗</a>
-      <a href="https://poki.com/"
-         target="_blank" rel="noopener noreferrer">🕹️ Poki ↗</a>
-    </div>
   </section>
 </main>
 
 <footer>
-  <strong>IKERS GAMING HUB</strong>
-  <p>Built for games and the web.</p>
+  Rocket Bot Royale Player · Fan-made website
 </footer>
 
 <script>
-const welcome = document.getElementById("welcome");
-const area = document.getElementById("buttonArea");
-const noButton = document.getElementById("no");
-const yesButton = document.getElementById("yes");
+const game = document.getElementById("game");
+const player = document.getElementById("player");
 
-let noX = 0;
-let noY = 0;
-let animationFrame = null;
-
-function moveNoAway(pointerX, pointerY) {
-  const buttonRect = noButton.getBoundingClientRect();
-
-  const buttonX = buttonRect.left + buttonRect.width / 2;
-  const buttonY = buttonRect.top + buttonRect.height / 2;
-
-  let dx = buttonX - pointerX;
-  let dy = buttonY - pointerY;
-  const distance = Math.hypot(dx, dy) || 1;
-
-  // Move farther when the pointer gets closer.
-  const strength = Math.min(260, 90 + (1800 / distance));
-
-  dx /= distance;
-  dy /= distance;
-
-  let targetX = noX + dx * strength;
-  let targetY = noY + dy * strength;
-
-  // Keep the button within the visible screen.
-  const margin = 12;
-  const areaRect = area.getBoundingClientRect();
-  const baseRect = noButton.getBoundingClientRect();
-
-  const minX = margin - (baseRect.left - noX);
-  const maxX = window.innerWidth - margin -
-               (baseRect.right - noX);
-
-  const minY = margin - (baseRect.top - noY);
-  const maxY = window.innerHeight - margin -
-               (baseRect.bottom - noY);
-
-  targetX = Math.max(minX, Math.min(maxX, targetX));
-  targetY = Math.max(minY, Math.min(maxY, targetY));
-
-  // If the edge prevents moving farther away, try the opposite direction.
-  if (Math.hypot(targetX - noX, targetY - noY) < 35) {
-    targetX = Math.max(minX, Math.min(maxX, noX - dx * 180));
-    targetY = Math.max(minY, Math.min(maxY, noY - dy * 180));
+function fullscreenGame() {
+  if (player.requestFullscreen) {
+    player.requestFullscreen();
   }
-
-  noX = targetX;
-  noY = targetY;
-
-  noButton.style.transform =
-    `translate3d(${noX}px, ${noY}px, 0)`;
 }
 
-welcome.addEventListener("pointermove", event => {
-  const rect = noButton.getBoundingClientRect();
-  const cx = rect.left + rect.width / 2;
-  const cy = rect.top + rect.height / 2;
-  const distance = Math.hypot(event.clientX - cx, event.clientY - cy);
-
-  if (distance < 145) {
-    if (animationFrame) cancelAnimationFrame(animationFrame);
-
-    animationFrame = requestAnimationFrame(() => {
-      moveNoAway(event.clientX, event.clientY);
-      animationFrame = null;
-    });
-  }
-});
-
-noButton.addEventListener("pointerdown", event => {
-  if (event.pointerType === "touch") {
-    event.preventDefault();
-    const rect = noButton.getBoundingClientRect();
-    moveNoAway(
-      rect.left + rect.width / 2,
-      rect.top + rect.height / 2
-    );
-  }
-});
-
-yesButton.addEventListener("click", () => {
-  welcome.remove();
-});
-
-document.getElementById("addressForm").addEventListener("submit", event => {
-  event.preventDefault();
-
-  const field = document.getElementById("address");
-  const status = document.getElementById("status");
-
-  try {
-    const url = new URL(field.value.trim());
-
-    if (url.protocol !== "https:") {
-      throw new Error("HTTPS required");
-    }
-
-    // Open the site directly instead of inside a blocked iframe.
-    const newTab = window.open(url.href, "_blank", "noopener,noreferrer");
-
-    status.textContent = newTab === null
-      ? "Your browser may have blocked the new tab. Allow pop-ups or use the link below."
-      : "Website opened in a new tab.";
-  } catch {
-    status.textContent = "Enter a valid HTTPS website address.";
-  }
-});
+function reloadGame() {
+  game.src = game.src;
+}
 </script>
 
 </body>
