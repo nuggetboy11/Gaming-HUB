@@ -2,251 +2,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rocket Bot Royale Player</title>
-
-<style>
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  background: #090d18;
-  color: white;
-  font-family: Arial, sans-serif;
-  min-height: 100vh;
-}
-
-header {
-  height: 76px;
-  padding: 0 5%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: #11182a;
-  border-bottom: 1px solid #293550;
-}
-
-.logo {
-  font-size: 21px;
-  font-weight: 900;
-  letter-spacing: 1px;
-}
-
-.logo span {
-  color: #8b7cff;
-}
-
-.status {
-  color: #aeb9d1;
-  font-size: 13px;
-}
-
-main {
-  max-width: 1250px;
-  margin: 30px auto;
-  padding: 0 20px;
-}
-
-.game-heading {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 15px;
-  flex-wrap: wrap;
-  margin-bottom: 18px;
-}
-
-h1 {
-  font-size: clamp(23px, 4vw, 35px);
-  margin: 0 0 8px;
-}
-
-.subtitle {
-  color: #9ca9c4;
-  margin: 0;
-  font-size: 14px;
-}
-
-.buttons {
-  display: flex;
-  gap: 9px;
-  flex-wrap: wrap;
-}
-
-button, .play-link {
-  background: #7664f5;
-  color: white;
-  border: none;
-  border-radius: 9px;
-  padding: 12px 15px;
-  font-size: 14px;
-  font-weight: bold;
-  cursor: pointer;
-  text-decoration: none;
-}
-
-button:hover, .play-link:hover {
-  background: #9487ff;
-}
-
-.secondary {
-  background: #202b42;
-}
-
-.secondary:hover {
-  background: #30405f;
-}
-
-.player {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  min-height: 300px;
-  max-height: 720px;
-  background: #05070c;
-  border: 1px solid #303c57;
-  border-radius: 14px;
-  overflow: hidden;
-  position: relative;
-}
-
-.player iframe {
-  width: 100%;
-  height: 100%;
-  border: 0;
-  position: absolute;
-  inset: 0;
-}
-
-.info {
-  margin-top: 20px;
-  padding: 19px;
-  background: #11182a;
-  border: 1px solid #293550;
-  border-radius: 12px;
-}
-
-.info h2 {
-  font-size: 17px;
-  margin-top: 0;
-}
-
-.info p {
-  color: #aeb9d1;
-  line-height: 1.6;
-  font-size: 14px;
-}
-
-footer {
-  padding: 25px;
-  text-align: center;
-  color: #73809b;
-  font-size: 12px;
-}
-
-.player:fullscreen {
-  width: 100%;
-  height: 100%;
-  max-height: none;
-  aspect-ratio: auto;
-  border: 0;
-  border-radius: 0;
-}
-
-@media (max-width: 600px) {
-  header {
-    padding: 0 16px;
-  }
-
-  .status {
-    display: none;
-  }
-
-  main {
-    margin-top: 20px;
-    padding: 0 12px;
-  }
-
-  .player {
-    aspect-ratio: 4 / 3;
-    min-height: 250px;
-  }
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rocket Bot Royale Player</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #090d18;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+    header {
+      background: #121a2b;
+      padding: 18px 24px;
+      border-bottom: 1px solid #303b55;
+      font-size: 22px;
+      font-weight: bold;
+    }
+    header span { color: #8c7cff; }
+    main {
+      max-width: 1200px;
+      margin: 25px auto;
+      padding: 0 16px;
+    }
+    .toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    h1 { font-size: 26px; margin: 0; }
+    button, .open {
+      background: #7967f5;
+      color: white;
+      border: 0;
+      padding: 12px 16px;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .player {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      min-height: 320px;
+      overflow: hidden;
+      border: 1px solid #303b55;
+      border-radius: 12px;
+      background: #03050a;
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    .help {
+      color: #b3bdd1;
+      line-height: 1.6;
+      margin-top: 18px;
+      font-size: 14px;
+    }
+    @media (max-width: 600px) {
+      .player { aspect-ratio: 4 / 3; min-height: 250px; }
+    }
+  </style>
 </head>
-
 <body>
+  <header>ROCKET BOT <span>ROYALE</span></header>
 
-<header>
-  <div class="logo">ROCKET BOT <span>ROYALE</span></div>
-  <div class="status">GAME PLAYER</div>
-</header>
-
-<main>
-  <div class="game-heading">
-    <div>
+  <main>
+    <div class="toolbar">
       <h1>Rocket Bot Royale</h1>
-      <p class="subtitle">Jump in and play!</p>
+      <div>
+        <button onclick="document.getElementById('game').requestFullscreen()">
+          ⛶ Fullscreen
+        </button>
+        <a class="open"
+           href="https://rocketbotroyale.winterpixel.io/"
+           target="_blank" rel="noopener noreferrer">
+          Open Game ↗
+        </a>
+      </div>
     </div>
 
-    <div class="buttons">
-      <button class="secondary" onclick="reloadGame()">
-        Reload
-      </button>
-
-      <button onclick="fullscreenGame()">
-        ⛶ Fullscreen
-      </button>
-
-      <a class="play-link"
-         href="https://rocketbotroyale.winterpixel.io/"
-         target="_blank"
-         rel="noopener noreferrer">
-        Open Game ↗
-      </a>
+    <div class="player" id="player">
+      <iframe
+        id="game"
+        src="https://www.rocketgames.io/game/rocket-bot-royale"
+        title="Rocket Bot Royale"
+        allowfullscreen>
+      </iframe>
     </div>
-  </div>
 
-  <div class="player" id="player">
-    <iframe
-      id="game"
-      src="https://www.miniplay.com/embed/rocket-bot-royale"
-      title="Rocket Bot Royale game"
-      allow="fullscreen; autoplay"
-      allowfullscreen>
-    </iframe>
-  </div>
-
-  <section class="info">
-    <h2>🎮 Ready to play?</h2>
-    <p>
-      Play Rocket Bot Royale in the game window above.
-      If the game does not load, click Open Game to try
-      the game's website directly.
+    <p class="help">
+      If the game doesn't appear in the player, open it directly.
+      Some websites prevent their pages from being embedded.
     </p>
-  </section>
-</main>
-
-<footer>
-  Rocket Bot Royale Player · Fan-made website
-</footer>
-
-<script>
-const game = document.getElementById("game");
-const player = document.getElementById("player");
-
-function fullscreenGame() {
-  if (player.requestFullscreen) {
-    player.requestFullscreen();
-  }
-}
-
-function reloadGame() {
-  game.src = game.src;
-}
-</script>
-
+  </main>
 </body>
 </html>
