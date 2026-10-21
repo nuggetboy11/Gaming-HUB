@@ -1,22 +1,22 @@
 
 const search = document.getElementById("search");
-const cards = [...document.querySelectorAll(".game-card")];
+const cards = [...document.querySelectorAll(".card")];
 const empty = document.getElementById("empty");
 
-search.addEventListener("input", () => {
-  const query = search.value.trim().toLowerCase();
-  let visible = 0;
+if (search) {
+  search.addEventListener("input", () => {
+    const query = search.value.toLowerCase().trim();
+    let count = 0;
 
-  cards.forEach((card) => {
-    const text = (
-      card.innerText + " " + card.dataset.search
-    ).toLowerCase();
+    cards.forEach(card => {
+      const matches =
+        (card.innerText + " " + card.dataset.search)
+          .toLowerCase().includes(query);
 
-    const matches = text.includes(query);
-    card.hidden = !matches;
+      card.hidden = !matches;
+      if (matches) count++;
+    });
 
-    if (matches) visible++;
+    empty.hidden = count > 0;
   });
-
-  empty.hidden = visible !== 0;
-});
+}
