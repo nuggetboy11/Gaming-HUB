@@ -5,61 +5,47 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Rocket Bay Gaming</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-  <header class="nav">
-    <a class="logo" href="index.html">🚀 ROCKET BAY</a>
-    <span class="status">GAMING HUB</span>
+  <header>
+    <a href="/" class="logo">🚀 ROCKET BAY</a>
+    <span class="status">GAMING BROWSER</span>
   </header>
 
   <main>
     <section class="hero">
-      <p class="eyebrow">WELCOME TO YOUR GAME ZONE</p>
+      <p class="eyebrow">YOUR PERSONAL GAME HUB</p>
       <h1>ROCKET BAY <span>GAMING</span></h1>
-      <p>Your games. Your space. Your next adventure.</p>
-      <input id="search" placeholder="Search your destinations..."
-             aria-label="Search destinations">
+      <p>One hub for your favorite destinations.</p>
     </section>
 
-    <section class="section">
-      <h2>Choose your destination</h2>
-      <div class="games">
-        <article class="card" data-search="roblox games">
-          <div class="art red">R</div>
-          <div class="info">
-            <span class="tag">GAMING</span>
-            <h3>Roblox</h3>
-            <p>Explore games and player-created worlds.</p>
-            <a class="launch" href="roblox.html">Open page →</a>
-          </div>
-        </article>
+    <nav class="tabs">
+      <button data-site="roblox">Roblox</button>
+      <button data-site="nowgg">now.gg</button>
+      <button data-site="whatsup">WhatsUp.ai</button>
+    </nav>
 
-        <article class="card" data-search="now gg cloud games">
-          <div class="art blue">▶</div>
-          <div class="info">
-            <span class="tag">CLOUD GAMING</span>
-            <h3>now.gg</h3>
-            <p>Open your cloud gaming destination.</p>
-            <a class="launch" href="nowgg.html">Open page →</a>
-          </div>
-        </article>
-
-        <article class="card" data-search="whatsup ai">
-          <div class="art purple">✦</div>
-          <div class="info">
-            <span class="tag">AI ZONE</span>
-            <h3>WhatsUp.ai</h3>
-            <p>Visit your AI destination.</p>
-            <a class="launch" href="whatsup.html">Open page →</a>
-          </div>
-        </article>
+    <section class="browser">
+      <div class="toolbar">
+        <button id="home">⌂</button>
+        <button id="back">←</button>
+        <button id="refresh">↻</button>
+        <input id="address" placeholder="Enter an authorized destination">
+        <button id="go">Go ↗</button>
       </div>
-      <p id="empty" hidden>No matching destinations found.</p>
+
+      <div id="viewer">
+        <div class="welcome">
+          <div class="orb">🚀</div>
+          <h2>Ready to launch?</h2>
+          <p>Choose a destination above to get started.</p>
+          <p id="message" role="status"></p>
+        </div>
+      </div>
     </section>
   </main>
 
-  <footer>ROCKET BAY GAMING · UNOFFICIAL PORTAL</footer>
-  <script src="script.js"></script>
+  <script src="/script.js"></script>
 </body>
 </html>
